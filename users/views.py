@@ -1,7 +1,7 @@
 from rest_framework.views import APIView, Request, Response, status
 from .models import User
 from rest_framework_simplejwt.authentication import JWTAuthentication
-from .serializers import UserSerializer
+from .serializer import UserSerializer
 from django.shortcuts import get_object_or_404
 from .permissions import IsAccountOwner
 
@@ -9,10 +9,11 @@ from .permissions import IsAccountOwner
 class UserView(APIView):
     def post(self, request: Request) -> Response:
         """
-        Registro de usuários
+        Registro de usuários UserSerializer
         """
         serializer = UserSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
+      
 
         serializer.save()
 
