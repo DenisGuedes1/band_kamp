@@ -40,12 +40,14 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = [
     "rest_framework",
+     "drf_spectacular",
 ]
 
 MY_APPS = [
     "users",
     "albums",
     "songs",
+   
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + MY_APPS
@@ -127,8 +129,16 @@ SIMPLE_JWT = {
 REST_FRAMEWORK = {
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 2,
-}
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 
+}
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'band_kamp',
+    'DESCRIPTION': 'Api made only with the intuition that registered users can register their favorite albums, as well as can specify the type of genre belonging to that album.',
+    'VERSION': '0.0.1',
+    'SERVE_INCLUDE_SCHEMA': False,
+    
+}
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 

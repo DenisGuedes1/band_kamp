@@ -7,6 +7,7 @@ from .permissions import IsAccountOwner
 from rest_framework.generics import CreateAPIView, RetrieveUpdateDestroyAPIView
 
 
+
 class UserView(CreateAPIView):
         queryset = User.objects.all()
         serializer_class = UserSerializer
