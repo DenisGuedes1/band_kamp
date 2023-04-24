@@ -69,6 +69,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "bandkamp.urls"
+# ROOT_URLCONF = "_core.urls"
 
 TEMPLATES = [
     {
